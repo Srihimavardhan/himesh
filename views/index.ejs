@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Users Detiles</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+        }
+        .table-container {
+            width: 80%; 
+            margin-bottom: 20px; 
+        }
+        table {
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+
+        th, td {
+            border: 1px solid #ddd; 
+            padding: 8px; 
+            text-align: left; 
+        }
+
+        th {
+            background-color: #f2f2f2; 
+        }
+
+        td a {
+            margin-right: 5px; 
+            text-decoration: none; 
+        }
+
+        .add-user-link {
+            display: block; 
+            text-align: center; 
+            margin-top: 10px; 
+            padding: 10px; 
+            background-color: #007bff; 
+            color: white;
+            text-decoration: none; 
+            border-radius: 5px; 
+        }
+
+        .add-user-link:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Roll no</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>city</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<users.length; i++) { %>
+                <tr>
+                    <td><%= users[i].rno %></td>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].age %></td>
+                    <td><%= users[i].city %></td>
+                    <td>
+                        <a href="/edit/<%= users[i].rno %>">Edit</a>
+                        <a href="/delete/<%= users[i].rno %>">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+    </div>
+    <a class="add-user-link" href="/add">Add user</a>
+</body>
+</html>

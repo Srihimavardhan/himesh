@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <title>Add users</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+        }
+
+        form {
+            width: 300px; 
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        form > div {
+            margin-bottom: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input {
+            width: calc(100% - 10px); 
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/save" method="post">
+            <div>
+                <label for="rno">Roll no</label>
+                <input type="text" name="rno" id="rno" placeholder="text" >
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="text">
+            </div>
+            <div>
+                <label for="name">Age</label>
+                <input type="text" name="age" id="age" placeholder="number">
+            </div>
+            <div>
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" placeholder="text">
+            </div>
+            <div>
+                <button type="submit">Save</button>
+            </div>
+            <div name=" errors"></div>
+        </form>
+    </div>
+</body>
+</html>
